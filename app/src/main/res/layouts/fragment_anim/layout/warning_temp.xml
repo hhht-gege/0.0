@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="10dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#f2f3f7">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/warning_temp_top"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:hint="上限"
+            android:background="@drawable/warning_add"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/warning_temp_end"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="下限"
+            android:background="@drawable/warning_add"
+            android:layout_marginTop="20dp"
+
+            app:layout_constraintTop_toBottomOf="@id/warning_temp_top"
+            app:layout_constraintLeft_toLeftOf="@id/warning_temp_top"
+            app:layout_constraintRight_toRightOf="@id/warning_temp_top"/>
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/warning_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/white"
+            android:src="@drawable/ic_warning_add"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

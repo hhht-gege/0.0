@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/fragment_setting',
+                            'src/main/res/layouts/fragment_anim',
+                            'src/main/res/layouts/fragment_me',
+                            'src/main/res/layouts/fragment_search',
+                            'src/main/res/layouts/login',
+                            'src/main/res/layouts/map',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.example.myapplicationcompetition"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs{
+        config{
+            storeFile file('C:\\Users\\86139\\sht.jks')
+            storePassword '1234567'
+            keyAlias 'shtdev'
+            keyPassword '1234567'
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'de.gerdi-project:GSON:6.0.6'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'org.jetbrains:annotations:15.0'
+    implementation files('libs\\core-3.0.0.jar')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'com.linchaolong.android:imagepicker:1.5'
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
+    implementation  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+    implementation  'com.scwang.smart:refresh-header-material:2.0.3'
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+}
+repositories {
+    mavenCentral()
+}
